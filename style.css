@@ -1,0 +1,42 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: GothamPro;
+	font-weight: 300;
+}
+
+.secao {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	width: 100%;
+	background-size: cover;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.rounded-xl {
+    border-radius: 1.5em;
+}
+.portfolio {
+	background-image: url(horizontal.webp);
+}
+.portfolio .seta {
+	width: 50px;
+}
+.gradient {
+	background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+	background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 );
+	height: 30%;
+}
+
+
+@media(max-width: 768px) {
+	.portfolio {
+		background-image: url(vertical.webp) !important;
+		background-size: contain !important;
+	}
+}
