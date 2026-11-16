@@ -1,7 +1,15 @@
 {
   "source": "https://www.behance.net/bm_marketing.xml",
-  "syncedAt": "2026-11-16T20:55:25+00:00",
+  "syncedAt": "2026-11-16T22:18:57+00:00",
   "projects": [
+    {
+      "id": "249614661",
+      "title": "CAMPANHA PROMOCIONAL",
+      "url": "https://www.behance.net/gallery/249614661/CAMPANHA-PROMOCIONAL",
+      "image": "https://mir-s3-cdn-cf.behance.net/projects/max_808_webp/d4be12249614661.Y3JvcCwyNjMyLDIwNTgsNzQyLDI1NA.png",
+      "summary": "Descrição do Projeto (Seção \"About\") Engajamento, Futebol e Varejo: Campanha Pitaco no Ponto Desenvolvimento de identidade visual e peças de social media para a campanha promocional \"Pitaco no Ponto\", do Althoff Supermercados em parceria com o Criciúma E.C. O projeto consistiu na criação de um ecossistema visual para gamificação via aplicativo, onde o torcedor interage com a marca prevendo placares de jogos. O desafio visual foi integrar grandes parceiros como Spaten, Mor, Ki-Carvão e Produtos Paraná, mantendo uma direção de arte dinâmica que une o universo do churrasco à paixão pelo futebol. O que foi desenvolvido: Direção de Arte para Social Media (Feed e Stories). Design Promocional focado em conversão para App. Branding e composição de Key Visual (KV) para campanhas de varejo.",
+      "publishedAt": "Mon, 16 Nov 2026 22:04:43 +0000"
+    },
     {
       "id": "258417277",
       "title": "CAMPANHA DE VENDAS",
