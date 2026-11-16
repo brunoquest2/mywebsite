@@ -68,34 +68,13 @@
   </main>
   <footer><div class="wrap foot"><a class="wordmark" href="#top">BRUNO<span>MOREIRA</span><sup>®</sup></a><div class="social"><a href="https://www.behance.net/bm_marketing" target="_blank" rel="noreferrer">Behance ↗</a><a href="https://wa.me/5511989864326" target="_blank" rel="noreferrer">WhatsApp ↗</a></div><span class="mono">© <span id="year"></span> Bruno Moreira · Santo André, Brasil</span></div></footer>
   <script>
-    const projects = [
-      {id:'56192793', module:'390454415', title:'Social Media | BestPay', category:'Campanha digital', slug:'SOCIAL-MEDIA-BestPay',tone:'#294fe8', image:'bestpay-interno-selecao.webp', filter:'campaign'},
-      {id:'255686489', module:'1489850675', title:'Social Media | LEMCA', category:'Direção de arte', slug:'Social-Media-LEMCA',tone:'#d6d0c6', image:'lemca-interno-selecao.webp', filter:'campaign'},
-      {id:'146989943', title:'Arcor | Plataforma de incentivo', category:'Design digital', slug:'Social-Media-Design-Direcao-de-Arte',tone:'#817a9e', href:'https://www.behance.net/gallery/146989943/Social-Media-Design-Direcao-de-Arte', image:'social-media-direcao-1.webp', filter:'campaign', description:'Uma experiência digital criada para organizar metas, acompanhar categorias de produtos e manter a equipe de vendas conectada às novidades.', descriptionEn:'A digital experience built to organize goals, track product categories and keep the sales team connected to the latest updates.'},
-      {id:'146989943', title:'Jeep | Renegade Week', category:'Campanha digital', slug:'Social-Media-Design-Direcao-de-Arte',tone:'#817a9e', href:'https://www.behance.net/gallery/146989943/Social-Media-Design-Direcao-de-Arte', image:'social-media-direcao-2.webp', filter:'campaign', description:'Conteúdo para redes sociais que transforma a campanha Renegade Week em uma chamada direta para explorar o veículo e a experiência Jeep.', descriptionEn:'Social content turning the Renegade Week campaign into a direct invitation to explore the vehicle and the Jeep experience.'},
-      {id:'146989943', title:'Cargill | Conteúdo de marca', category:'Campanha', slug:'Social-Media-Design-Direcao-de-Arte',tone:'#817a9e', href:'https://www.behance.net/gallery/146989943/Social-Media-Design-Direcao-de-Arte', image:'social-media-direcao-3.webp', filter:'campaign', description:'Peças para marcas do portfólio Cargill, com uma comunicação visual leve e colorida para aproximar produtos do dia a dia.', descriptionEn:'Creative for Cargill portfolio brands, using a bright, approachable visual language to bring products into everyday moments.'},
-      {id:'249750877', module:'1447002741', title:'Território VW 2025', category:'Design digital', slug:'UIUX-Design-Plataforma-Digital-Territorio-VW-2025',tone:'#315ec9', image:'territorio-vw-interno.webp', filter:'digital'},
-      {id:'249750159', module:'1446993689', title:'Vino e Formaggio 2024', category:'Identidade visual', slug:'Branding-IDV-Festival-Vino-e-Formaggio-2024',tone:'#d27538', image:'vino-e-formaggio-interno.jpg', filter:'branding'},
-      {id:'193295883', module:'1094026895', title:'Daniela Marcos Barone — Advocacia', category:'Identidade visual', slug:'ID-Visual-Daniela-Marcos-Barone-Advocacia',tone:'#c5b9a7', image:'daniela-barone-interno.webp', filter:'branding'},
-      {id:'38571915', title:'7 Comíveis e Bebíveis', category:'Identidade visual', slug:'Cartao-de-Visitas-e-Cardapios-7-Comiveis-e-Bebiveis',tone:'#d9b936', href:'https://www.behance.net/gallery/38571915/Cartao-de-Visitas-e-Cardapios-7-Comiveis-e-Bebiveis', image:'comiveis-bebiveis-interno.webp', filter:'branding'},
-      {id:'42737761', module:'257086745', title:'Paranapiacaba — Parque Nascentes', category:'Campanha institucional', slug:'Paranapiacaba-Parque-Natural-Municipal-Nascentes',tone:'#5e8a60', href:'https://www.behance.net/gallery/42737761/Paranapiacaba-Parque-Natural-Municipal-Nascentes', image:'paranapiacaba-interno.webp', filter:'campaign'},
-      {id:'66690331', module:'428582013', title:'Campanha — The French Co.', category:'Campanha', slug:'Campanha-The-French-Co',tone:'#d94c31', image:'the-french-co.jpg', filter:'campaign', crop:'french'},
-      {id:'85630005', module:'544210779', title:'Na Oito | Bar e Restaurante', category:'Identidade visual', slug:'Na-Oito-Bar-e-Restaurante',tone:'#508f53', image:'na-oito.jpg', filter:'branding', crop:'na-oito'},
-    ];
     const container = document.getElementById('projects');
-    projects.forEach((project, index) => {
-      const article = document.createElement('article'); article.className = 'project' + (project.crop ? ' project--' + project.crop : ''); article.dataset.filter = project.filter;
-      const projectHref = project.href || `https://www.behance.net/gallery/${project.id}/${project.slug}${project.module ? `/modules/${project.module}` : ''}`;
-      const preview = project.image ? '<span class="project-art"><img src="./assets/' + project.image + '" alt="Imagem interna do projeto ' + project.title + '" loading="lazy"></span>' : '<span class="placeholder-art" style="--tile:' + project.tone + '"><span class="eyebrow">Projeto no Behance</span><strong>' + project.title + '</strong><span class="preview-action">Ver peça interna ↗</span></span>';
-      article.innerHTML = '<a class="frame work-preview" href="' + projectHref + '" target="_blank" rel="noreferrer" aria-label="Ver ' + project.title + ' no Behance">' + preview + '</a><div class="project-meta"><span class="project-title">' + project.title + '</span><span class="project-type" data-category="' + project.category + '">' + project.category + '</span></div>' + (project.description ? '<p class="project-description" data-description-pt="' + project.description + '" data-description-en="' + project.descriptionEn + '">' + project.description + '</p>' : '') + '<a class="project-link" href="' + projectHref + '" target="_blank" rel="noreferrer" aria-label="Ver projeto ' + project.title + ' no Behance"><span class="behance-mark" aria-hidden="true">Bē</span><span class="project-link-label">Ver case no Behance ↗</span></a>';
-      container.appendChild(article);
-    });
-    const cards = [...document.querySelectorAll('.project')];
+    let cards = [...document.querySelectorAll('.project')];
     const translations = {
       pt: {work:'Trabalhos',about:'Sobre',services:'Especialidades',contact:'Vamos conversar ↗',menu:'Menu','menu-kicker':'Bruno Moreira / Navegação','menu-title':'Por onde começamos?','hero-role':'Direção de arte · Design gráfico · Santo André, SP','hero-title':'Ideias com<br><em>presença.</em>','hero-intro':'Transformo estratégia em imagens que aproximam marcas das pessoas.','hero-availability':'Mais de 15 anos criando para o mundo real e digital.<br>Disponível para novos projetos.',intro:'Identidade, campanhas e comunicação visual com intenção.','selected-work':'Portfólio selecionado · 2026','work-label':'01 / Seleção de projetos','work-title':'Trabalho que<br>fala por si.','work-description':'Uma seleção de projetos publicados no Behance. Abra cada trabalho para explorar as imagens e etapas originais.','all':'Todos',identity:'Identidade',campaigns:'Campanhas',digital:'Digital','more-work':'Mais projetos, estudos e processos','behance-profile':'Ver perfil no Behance ↗','about-label':'02 / Sobre','about-title':'Bruno<br>Moreira','about-lead':'Diretor de arte e designer gráfico. Crio campanhas que conectam boas ideias à vida cotidiana.','about-copy':'Com mais de 15 anos de atuação em publicidade, desenvolvo campanhas online e offline e projetos de design gráfico para marcas, produtos e pessoas. Sou formado pela Escola Panamericana de Arte e Design e trabalho a partir de Santo André, conectando estratégia, conceito e execução visual.',experience:'Anos de experiência','online-offline':'Online<br>& offline','art-direction':'Direção de arte',location:'Santo André, Brasil','services-label':'03 / O que faço','services-title':'Da ideia à imagem.','service-1':'Direção de arte','service-1-desc':'Conceito visual para marcas, campanhas e conteúdo.','service-2':'Identidade visual','service-2-desc':'Sistemas gráficos consistentes, do logo às aplicações.','service-3':'Campanhas & social','service-3-desc':'Peças para comunicação online, offline e redes sociais.','service-4':'Design editorial','service-4-desc':'Apresentações, cardápios e materiais impressos.','contact-label':'Tem um projeto em mente?','contact-title':'Vamos criar<br>algo marcante.','contact-button':'Falar com o Bruno no WhatsApp ↗','project-link':'Ver case no Behance ↗','count':'projetos','menu-close':'Fechar menu','filter-aria':'Filtrar projetos','switch-language':'Switch to English','theme-dark':'Ativar modo escuro','theme-light':'Ativar modo claro'},
       en: {work:'Work',about:'About',services:'Services',contact:'Let’s talk ↗',menu:'Menu','menu-kicker':'Bruno Moreira / Navigation','menu-title':'Where shall we start?','hero-role':'Art direction · Graphic design · Santo André, Brazil','hero-title':'Ideas with<br><em>presence.</em>','hero-intro':'I turn strategy into images that bring brands closer to people.','hero-availability':'Over 15 years creating for the real and digital worlds.<br>Available for new projects.',intro:'Identity, campaigns and visual communication with purpose.','selected-work':'Selected portfolio · 2026','work-label':'01 / Selected work','work-title':'Work that<br>speaks for itself.','work-description':'A selection of projects published on Behance. Open any project to explore its images and process.','all':'All','identity':'Identity','campaigns':'Campaigns','digital':'Digital','more-work':'More projects, studies and process','behance-profile':'View Behance profile ↗','about-label':'02 / About','about-title':'Bruno<br>Moreira','about-lead':'Art director and graphic designer. I create campaigns that connect good ideas to everyday life.','about-copy':'With over 15 years in advertising, I develop online and offline campaigns and graphic design projects for brands, products and people. I graduated from Escola Panamericana de Arte e Design and work from Santo André, connecting strategy, concept and visual execution.','experience':'Years of experience','online-offline':'Online<br>& offline','art-direction':'Art direction',location:'Santo André, Brazil','services-label':'03 / What I do','services-title':'From idea to image.','service-1':'Art direction','service-1-desc':'Visual concepts for brands, campaigns and content.','service-2':'Visual identity','service-2-desc':'Consistent graphic systems, from logos to applications.','service-3':'Campaigns & social','service-3-desc':'Creative for online, offline and social media.','service-4':'Editorial design','service-4-desc':'Presentations, menus and printed materials.','contact-label':'Have a project in mind?','contact-title':'Let’s make<br>something stand out.','contact-button':'Talk to Bruno on WhatsApp ↗','project-link':'View case on Behance ↗','count':'projects','menu-close':'Close menu','filter-aria':'Filter projects','switch-language':'Mudar para português','theme-dark':'Enable dark mode','theme-light':'Enable light mode'}
     };
-    const categoryNames = {pt:{'Direção de arte':'Direção de arte','Campanha':'Campanha','Campanha digital':'Campanha digital','Design digital':'Design digital','Identidade visual':'Identidade visual','Branding':'Branding','Campanha institucional':'Campanha institucional'},en:{'Direção de arte':'Art direction','Campanha':'Campaign','Campanha digital':'Digital campaign','Design digital':'Digital design','Identidade visual':'Visual identity','Branding':'Branding','Campanha institucional':'Institutional campaign'}};
+    const categoryNames = {pt:{campaign:'Campanhas',branding:'Identidade visual',digital:'Design digital','Direção de arte':'Direção de arte','Campanha':'Campanha','Campanha digital':'Campanha digital','Design digital':'Design digital','Identidade visual':'Identidade visual','Branding':'Branding','Campanha institucional':'Campanha institucional'},en:{campaign:'Campaigns',branding:'Visual identity',digital:'Digital design','Direção de arte':'Art direction','Campanha':'Campaign','Campanha digital':'Digital campaign','Design digital':'Digital design','Identidade visual':'Visual identity','Branding':'Branding','Campanha institucional':'Institutional campaign'}};
     let currentLanguage = 'pt';
     const languageToggle = document.getElementById('language-toggle');
     const themeToggle = document.getElementById('theme-toggle');
@@ -156,6 +135,7 @@
     const filterButtons = [...document.querySelectorAll('.filter-button')];
     const countLabel = document.getElementById('project-count');
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let activeProjectFilter = 'all';
     let revealObserver;
     if ('IntersectionObserver' in window && !reducedMotion) {
       revealObserver = new IntersectionObserver(entries => entries.forEach(entry => {
@@ -164,6 +144,7 @@
       document.querySelectorAll('.hero > div,.intro-strip,.section-head,.project,.about-grid,.service,.cta-inner').forEach(el => { el.classList.add('reveal'); revealObserver.observe(el); });
     } else document.querySelectorAll('.hero > div,.intro-strip,.section-head,.project,.about-grid,.service,.cta-inner').forEach(el => el.classList.add('is-visible'));
     function setProjectFilter(filter) {
+      activeProjectFilter = filter;
       let visible = 0;
       cards.forEach(card => {
         const match = filter === 'all' || card.dataset.filter === filter;
@@ -175,6 +156,96 @@
       filterButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.filter === filter)));
     }
     filterButtons.forEach(button => button.addEventListener('click', () => setProjectFilter(button.dataset.filter)));
+    async function syncBehanceProjects() {
+      try {
+        const response = await fetch('./behance-projects.json', {cache:'no-store'});
+        if (!response.ok) return;
+        const data = await response.json();
+        const syncedProjects = Array.isArray(data.projects) ? data.projects : [];
+        container.replaceChildren();
+        syncedProjects.forEach(project => {
+          if (!project.title || !isBehanceImage(project.image) || !isBehanceProjectUrl(project.url)) return;
+          const article = document.createElement('article');
+          article.className = 'project reveal';
+          article.dataset.projectId = String(project.id);
+          article.dataset.filter = classifyProject(project);
+
+          const preview = document.createElement('a');
+          preview.className = 'frame work-preview';
+          preview.href = project.url;
+          preview.target = '_blank';
+          preview.rel = 'noreferrer';
+          preview.setAttribute('aria-label', `Ver ${project.title} no Behance`);
+          const art = document.createElement('span');
+          art.className = 'project-art';
+          const image = document.createElement('img');
+          image.src = project.image;
+          image.alt = `Capa do projeto ${project.title}`;
+          image.loading = 'lazy';
+          art.appendChild(image);
+          preview.appendChild(art);
+
+          const meta = document.createElement('div');
+          meta.className = 'project-meta';
+          const title = document.createElement('span');
+          title.className = 'project-title';
+          title.textContent = project.title;
+          const category = document.createElement('span');
+          category.className = 'project-type';
+          category.dataset.category = article.dataset.filter;
+          category.textContent = categoryNames[currentLanguage][category.dataset.category] || category.dataset.category;
+          meta.append(title, category);
+
+          const description = document.createElement('p');
+          description.className = 'project-description';
+          description.dataset.source = 'behance-sync';
+          description.dataset.descriptionPt = project.summary || 'Projeto publicado por Bruno Moreira no Behance. Acesse para ver o trabalho completo.';
+          description.dataset.descriptionEn = project.summary || 'Project published by Bruno Moreira on Behance. Open it to explore the complete work.';
+          description.textContent = currentLanguage === 'pt' ? description.dataset.descriptionPt : description.dataset.descriptionEn;
+
+          const link = document.createElement('a');
+          link.className = 'project-link';
+          link.href = project.url;
+          link.target = '_blank';
+          link.rel = 'noreferrer';
+          link.setAttribute('aria-label', `Ver projeto ${project.title} no Behance`);
+          const mark = document.createElement('span');
+          mark.className = 'behance-mark';
+          mark.setAttribute('aria-hidden', 'true');
+          mark.textContent = 'Bē';
+          const label = document.createElement('span');
+          label.className = 'project-link-label';
+          label.textContent = translations[currentLanguage]['project-link'];
+          link.append(mark, label);
+          article.append(preview, meta, description, link);
+          container.appendChild(article);
+          if (revealObserver) revealObserver.observe(article);
+          else article.classList.add('is-visible');
+        });
+        cards = [...document.querySelectorAll('.project')];
+        document.querySelectorAll('.project-type').forEach(element => {
+          element.textContent = categoryNames[currentLanguage][element.dataset.category] || element.dataset.category;
+        });
+        setProjectFilter(activeProjectFilter);
+      } catch (error) {
+        console.info('Behance updates are unavailable; showing the last published portfolio.', error);
+      }
+    }
+    function isBehanceImage(url) {
+      try { const parsed = new URL(url); return parsed.protocol === 'https:' && parsed.hostname === 'mir-s3-cdn-cf.behance.net'; }
+      catch { return false; }
+    }
+    function isBehanceProjectUrl(url) {
+      try { const parsed = new URL(url); return parsed.protocol === 'https:' && parsed.hostname === 'www.behance.net' && /\/gallery\/\d+\//.test(parsed.pathname); }
+      catch { return false; }
+    }
+    function classifyProject(project) {
+      const text = `${project.title || ''} ${project.summary || ''}`.toLowerCase();
+      if (/ui.?ux|interface|plataforma digital|digital platform|website|web design/.test(text)) return 'digital';
+      if (/identidade visual|branding|visual identity|brand identity|logo/.test(text)) return 'branding';
+      return 'campaign';
+    }
+    syncBehanceProjects();
     const progressBar = document.getElementById('scroll-progress-bar');
     let scrollTick = false;
     window.addEventListener('scroll', () => {
